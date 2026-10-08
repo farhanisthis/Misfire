@@ -1,4 +1,5 @@
 const express = require("express");
+const executeRoutes = require("./routes/execute.routes");
 
 const app = express();
 
@@ -9,5 +10,7 @@ app.get("/health", (req, res) => {
     service: "misfire",
   });
 });
+
+app.use("/api", executeRoutes);
 
 module.exports = app;
